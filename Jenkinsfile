@@ -83,7 +83,7 @@ pipeline {
                 slackSend(
                     channel: env.SLACK_CHANNEL,
                     color: 'good',
-                    message: "✅ hoangpv deploy job successful!" +
+                    message: "✅ hoangpv deploy job successful!"
                 )
             }
         }
