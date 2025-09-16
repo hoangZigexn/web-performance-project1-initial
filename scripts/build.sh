@@ -6,6 +6,7 @@ echo "=== BUILDING PROJECT ==="
 
 # Install dependencies
 echo "Installing dependencies..."
+cd ..
 rm -rf node_modules
 npm install
 

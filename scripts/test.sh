@@ -4,6 +4,7 @@ echo "=== TESTING PROJECT ==="
 
 
 echo "Running tests..."
+cd ..
 npm run test:ci
 
 # Check if installation was successful
