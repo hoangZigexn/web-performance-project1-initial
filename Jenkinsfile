@@ -83,12 +83,7 @@ pipeline {
                 slackSend(
                     channel: env.SLACK_CHANNEL,
                     color: 'good',
-                    message: "✅ hoangpv deploy job successful!\\n" +
-                            "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
-                            "Branch: ${env.GIT_BRANCH}\\n" +
-                            "Local: http://${env.LOCAL_HOST}/jenkins/hoangpv2/deploy/current/\\n" +
-                            "Remote: http://${env.REMOTE_HOST}/jenkins/hoangpv2/deploy/current/\\n" +
-                            "Firebase: https://${env.FIREBASE_PROJECT}.web.app"
+                    message: "✅ hoangpv deploy job successful!" +
                 )
             }
         }
@@ -97,7 +92,7 @@ pipeline {
                 slackSend(
                     channel: env.SLACK_CHANNEL,
                     color: 'danger',
-                    message: "❌ hoangpv deploy job failed!\\n" +
+                    message: "❌ hoangpv deploy job failed!"
                 )
             }
         }
