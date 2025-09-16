@@ -69,31 +69,31 @@ pipeline {
         // }
     }
     
-    post {
-        success {
-            script {
-                slackSend(
-                    channel: env.SLACK_CHANNEL,
-                    color: 'good',
-                    message: "✅ hoangpv deploy job ${env.JOB_NAME} #${env.BUILD_NUMBER} thành công!\\n" +
-                            "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
-                            "Branch: ${env.GIT_BRANCH}\\n" +
-                            "Local: http://${env.LOCAL_HOST}/jenkins/hoangpv2/deploy/current/\\n" +
-                            "Remote: http://${env.REMOTE_HOST}/jenkins/hoangpv2/deploy/current/"
-                )
-            }
-        }
-        failure {
-            script {
-                slackSend(
-                    channel: env.SLACK_CHANNEL,
-                    color: 'danger',
-                    message: "❌ hoangpv deploy job ${env.JOB_NAME} #${env.BUILD_NUMBER} thất bại!\\n" +
-                            "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
-                            "Branch: ${env.GIT_BRANCH}\\n" +
-                            "Xem log tại: ${env.BUILD_URL}console"
-                )
-            }
-        }
-    }
+    // post {
+    //     success {
+    //         script {
+    //             slackSend(
+    //                 channel: env.SLACK_CHANNEL,
+    //                 color: 'good',
+    //                 message: "✅ hoangpv deploy job ${env.JOB_NAME} #${env.BUILD_NUMBER} thành công!\\n" +
+    //                         "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
+    //                         "Branch: ${env.GIT_BRANCH}\\n" +
+    //                         "Local: http://${env.LOCAL_HOST}/jenkins/hoangpv2/deploy/current/\\n" +
+    //                         "Remote: http://${env.REMOTE_HOST}/jenkins/hoangpv2/deploy/current/"
+    //             )
+    //         }
+    //     }
+    //     failure {
+    //         script {
+    //             slackSend(
+    //                 channel: env.SLACK_CHANNEL,
+    //                 color: 'danger',
+    //                 message: "❌ hoangpv deploy job ${env.JOB_NAME} #${env.BUILD_NUMBER} thất bại!\\n" +
+    //                         "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
+    //                         "Branch: ${env.GIT_BRANCH}\\n" +
+    //                         "Xem log tại: ${env.BUILD_URL}console"
+    //             )
+    //         }
+    //     }
+    // }
 }

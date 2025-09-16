@@ -4,6 +4,7 @@ echo "=== TESTING PROJECT ==="
 
 
 echo "Running tests..."
+echo $PWD
 cd Workshop2
 npm run test:ci
 
