@@ -8,7 +8,10 @@ echo "=== BUILDING PROJECT ==="
 echo "Installing dependencies..."
 echo $PWD
 rm -rf node_modules
-npm install
+# npm install
+
+npm ci --include=dev --verbose
+
 
 # Check if installation was successful
 if [ $? -eq 0 ]; then
