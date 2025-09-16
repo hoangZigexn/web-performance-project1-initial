@@ -36,13 +36,6 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'chmod +x scripts/build.sh'
-                sh './scripts/build.sh'
-            }
-        }
-
-        stage('Build') {
-            steps {
                 echo '🔨 Installing dependencies and building...'
                 sh 'chmod +x scripts/build.sh'
                 sh './scripts/build.sh'
@@ -56,7 +49,6 @@ pipeline {
                 sh './scripts/test.sh'
             }
         }
-
         
         stage('Deploy to Local Server') {
             steps {
