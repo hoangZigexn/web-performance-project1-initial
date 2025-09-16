@@ -41,7 +41,7 @@ if [ "${USE_DOCKER}" = "true" ]; then
     if [ $? -eq 0 ]; then
         echo "✅ Directory structure created in Docker"
     else
-        echo "❌ Failed to create directory structure in Docker"
+        echo "❌ Failed to create directory structure in Docker1"
         exit 1
     fi
     
