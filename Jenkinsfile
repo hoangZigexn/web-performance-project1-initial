@@ -77,24 +77,24 @@ pipeline {
         }
     }
     
-    post {
-        success {
-            script {
-                slackSend(
-                    channel: env.SLACK_CHANNEL,
-                    color: 'good',
-                    message: "✅ hoangpv deploy job successful!"
-                )
-            }
-        }
-        failure {
-            script {
-                slackSend(
-                    channel: env.SLACK_CHANNEL,
-                    color: 'danger',
-                    message: "❌ hoangpv deploy job failed!"
-                )
-            }
-        }
-    }
+    // post {
+    //     success {
+    //         script {
+    //             slackSend(
+    //                 channel: env.SLACK_CHANNEL,
+    //                 color: 'good',
+    //                 message: "✅ hoangpv deploy job successful!"
+    //             )
+    //         }
+    //     }
+    //     failure {
+    //         script {
+    //             slackSend(
+    //                 channel: env.SLACK_CHANNEL,
+    //                 color: 'danger',
+    //                 message: "❌ hoangpv deploy job failed!"
+    //             )
+    //         }
+    //     }
+    // }
 }
