@@ -10,12 +10,9 @@ pipeline {
         FIREBASE_PROJECT = 'hoangnvh_workshop2'
         FIREBASE_TOKEN = credentials('firebase-token')
         
-        // Local deployment configuration
-        USE_DOCKER = credentials('use-docker')
-        DOCKER_CONTAINER_ID = credentials('docker-container-id')
         
         // Slack configuration
-        SLACK_CHANNEL = credentials('slack-channel')
+        SLACK_CHANNEL = '#lnd-2025-workshop'
         SLACK_TOKEN = credentials('slack-token')
     }
     

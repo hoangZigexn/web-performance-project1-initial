@@ -11,7 +11,8 @@ REPO_NAME="web-performance-project1-initial"
 BASE_DIR="/usr/share/nginx/html/jenkins"
 DEPLOY_DATE=$(date +%Y%m%d)
 DEPLOY_DIR="${BASE_DIR}/${USERNAME}/deploy/${DEPLOY_DATE}"
-
+DOCKER_CONTAINER_ID="495b8bfe30b1"
+USE_DOCKER="true"
 # Debug environment variables
 echo "DEBUG: USE_DOCKER = '${USE_DOCKER}'"
 echo "DEBUG: DOCKER_CONTAINER_ID = '${DOCKER_CONTAINER_ID}'"
