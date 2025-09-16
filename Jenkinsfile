@@ -13,7 +13,7 @@ pipeline {
         
         // Slack configuration
         SLACK_CHANNEL = '#lnd-2025-workshop'
-        SLACK_TOKEN = credentials('slack-token')
+        SLACK_TOKEN = credentials('slack_token')
     }
     
     stages {
