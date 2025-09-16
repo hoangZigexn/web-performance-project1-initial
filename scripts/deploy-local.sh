@@ -27,7 +27,7 @@ SSH_KEY_PATH="/var/jenkins_home/.ssh/id_rsa"
 echo "Creating directory structure on Ubuntu server..."
 ssh -i ${SSH_KEY_PATH} -o StrictHostKeyChecking=no ${LOCAL_USER}@${LOCAL_HOST} "
     mkdir -p ${BASE_DIR}/${USERNAME}
-    mkdir -p ${BASE_DIR}/deploy
+    mkdir -p ${BASE_DIR}/${USERNAME}/deploy
 "
 
 if [ $? -eq 0 ]; then
@@ -80,7 +80,7 @@ fi
 # Create symlink and cleanup old deployments
 echo "Creating symlink and cleaning up old deployments..."
 ssh -i ${SSH_KEY_PATH} -o StrictHostKeyChecking=no ${LOCAL_USER}@${LOCAL_HOST} "
-    cd ${BASE_DIR}/deploy
+    cd ${BASE_DIR}/${USERNAME}/deploy
     rm -f current
     ln -s ${DEPLOY_DATE} current
     
