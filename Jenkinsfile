@@ -71,8 +71,8 @@ pipeline {
         stage('Deploy to Firebase') {
             steps {
                 echo '🔥 Deploying to Firebase...'
-                sh 'chmod +x scripts/deploy-firebase.sh'
-                sh './scripts/deploy-firebase.sh'
+                sh 'chmod +x scripts/deploy-firebase-token.sh'
+                sh './scripts/deploy-firebase-token.sh'
             }
         }
     }
