@@ -36,30 +36,24 @@ pipeline {
         
         stage('Build') {
             steps {
-                script {
-                    sh 'chmod +x scripts/build.sh'
-                    sh './scripts/build.sh'
-                }
+                sh 'chmod +x scripts/build.sh'
+                sh './scripts/build.sh'
             }
         }
         
         stage('Lint & Test') {
             steps {
-                script {
-                    sh 'chmod +x scripts/test.sh'
-                    sh './scripts/test.sh'
-                }
+                sh 'chmod +x scripts/test.sh'
+                sh './scripts/test.sh'
             }
         }
         
         stage('Deploy to Local Server') {
             steps {
-                script {
-                    echo "DEBUG: USE_DOCKER = ${env.USE_DOCKER}"
-                    echo "DEBUG: DOCKER_CONTAINER_ID = ${env.DOCKER_CONTAINER_ID}"
-                    sh 'chmod +x scripts/deploy-local.sh'
-                    sh './scripts/deploy-local.sh'
-                }
+                echo "DEBUG: USE_DOCKER = ${env.USE_DOCKER}"
+                echo "DEBUG: DOCKER_CONTAINER_ID = ${env.DOCKER_CONTAINER_ID}"
+                sh 'chmod +x scripts/deploy-local.sh'
+                sh './scripts/deploy-local.sh'
             }
         }
         
