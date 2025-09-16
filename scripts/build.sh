@@ -7,6 +7,7 @@ echo "=== BUILDING PROJECT ==="
 # Install dependencies
 echo "Installing dependencies..."
 echo $PWD
+cd Workshop2
 rm -rf node_modules
 npm install
 

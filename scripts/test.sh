@@ -2,11 +2,9 @@
 
 echo "=== TESTING PROJECT ==="
 
-# Run tests from current directory
-echo "Running tests from current directory..."
-echo "Current directory: $PWD"
 
 echo "Running tests..."
+echo $PWD
 npm run test:ci
 
 # Check if installation was successful
