@@ -2,8 +2,8 @@
   "scripts": {
     "lint": "eslint 'js/**/*.js'",
     "lint:fix": "eslint 'js/**/*.js' --fix",
-    "lint:check": "eslint 'js/**/*.js' --max-warnings 0",
-    "test": "jest",
+    "lint:check": "npx eslint 'js/**/*.js' --max-warnings 0",
+    "test": "npx jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "test:ci": "npm run lint:check && npm test"
