@@ -4,7 +4,7 @@ echo "=== TESTING PROJECT ==="
 
 
 echo "Running tests..."
-cd ..
+cd Workshop2
 npm run test:ci
 
 # Check if installation was successful
