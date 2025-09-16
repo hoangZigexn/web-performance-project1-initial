@@ -8,7 +8,7 @@ pipeline {
     environment {
         // Firebase configuration
         FIREBASE_PROJECT = 'hoangnvh_workshop2'
-        FIREBASE_TOKEN = credentials('firebase-token')
+        // FIREBASE_TOKEN = credentials('firebase-token')
         
         
         // Slack configuration
