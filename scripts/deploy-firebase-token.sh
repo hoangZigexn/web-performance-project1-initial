@@ -4,7 +4,7 @@
 echo "=== DEPLOYING TO FIREBASE ==="
 
 # Configuration
-FIREBASE_PROJECT="${FIREBASE_PROJECT:-hoangnvh_workshop2}"
+FIREBASE_PROJECT="${FIREBASE_PROJECT:-hoangpvworkshop2}"
 FIREBASE_TOKEN="${FIREBASE_TOKEN}"
 
 # Check if Firebase CLI is installed
