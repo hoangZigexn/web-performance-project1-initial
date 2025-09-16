@@ -9,7 +9,7 @@ LOCAL_USER="root"
 USERNAME="hoangpv2"
 REPO_NAME="web-performance-project1-initial"
 BASE_DIR="/usr/share/nginx/html/jenkins"
-DEPLOY_DATE=$(date +%s)
+DEPLOY_DATE=$(date +"%Y%m%d%H%M%S")
 DEPLOY_DIR="${BASE_DIR}/${USERNAME}/deploy/${DEPLOY_DATE}"
 DOCKER_CONTAINER_ID="495b8bfe30b1"
 USE_DOCKER="true"
@@ -85,7 +85,7 @@ ssh -i ${SSH_KEY_PATH} -o StrictHostKeyChecking=no ${LOCAL_USER}@${LOCAL_HOST} "
     ln -s ${DEPLOY_DATE} current
     
     # Keep only 5 most recent deployments (including current)
-    ls -t | tail -n +6 | xargs -r rm -rf
+    ls -dt [0-9]* | tail -n +6 | xargs -r rm -rf
     echo 'Kept 5 most recent deployments'
 "
 
