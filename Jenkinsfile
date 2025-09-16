@@ -59,14 +59,14 @@ pipeline {
             }
         }
         
-        // stage('Deploy to Remote Server') {
-        //     steps {
-        //         script {
-        //             sh 'chmod +x scripts/deploy-remote.sh'
-        //             sh './scripts/deploy-remote.sh'
-        //         }
-        //     }
-        // }
+        stage('Deploy to Remote Server') {
+            steps {
+                script {
+                    sh 'chmod +x scripts/deploy-remote.sh'
+                    sh './scripts/deploy-remote.sh'
+                }
+            }
+        }
     }
     
     // post {

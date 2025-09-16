@@ -48,7 +48,7 @@ ssh -i ${SSH_KEY_PATH} -o StrictHostKeyChecking=no ${LOCAL_USER}@${LOCAL_HOST} "
         cd ..
     else
         echo 'Repository not found, cloning...'
-        git clone https://github.com/hoangZigexn/web-performance-project1-initial.git
+        git clone https://github.com/hoangZigexn/${REPO_NAME}.git
     fi
 "
 
