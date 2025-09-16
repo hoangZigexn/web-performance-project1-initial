@@ -1,10 +1,22 @@
 {
   "hosting": {
-    "public": "/",
+    "public": ".",
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "**/scripts/**",
+      "**/Jenkinsfile",
+      "**/package*.json",
+      "**/.eslintrc.js",
+      "**/js/**/*.test.js",
+      "**/js/setupTests.js"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }

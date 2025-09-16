@@ -8,7 +8,7 @@ pipeline {
     environment {
         // Firebase configuration
         FIREBASE_PROJECT = 'hoangnvh_workshop2'
-        // FIREBASE_TOKEN = credentials('firebase-token')
+        FIREBASE_TOKEN = credentials('firebase-token')
         
         
         // Slack configuration
@@ -67,33 +67,39 @@ pipeline {
                 }
             }
         }
+        
+        stage('Deploy to Firebase') {
+            steps {
+                echo '🔥 Deploying to Firebase...'
+                sh 'chmod +x scripts/deploy-firebase.sh'
+                sh './scripts/deploy-firebase.sh'
+            }
+        }
     }
     
-    // post {
-    //     success {
-    //         script {
-    //             slackSend(
-    //                 channel: env.SLACK_CHANNEL,
-    //                 color: 'good',
-    //                 message: "✅ hoangpv deploy job ${env.JOB_NAME} #${env.BUILD_NUMBER} thành công!\\n" +
-    //                         "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
-    //                         "Branch: ${env.GIT_BRANCH}\\n" +
-    //                         "Local: http://${env.LOCAL_HOST}/jenkins/hoangpv2/deploy/current/\\n" +
-    //                         "Remote: http://${env.REMOTE_HOST}/jenkins/hoangpv2/deploy/current/"
-    //             )
-    //         }
-    //     }
-    //     failure {
-    //         script {
-    //             slackSend(
-    //                 channel: env.SLACK_CHANNEL,
-    //                 color: 'danger',
-    //                 message: "❌ hoangpv deploy job ${env.JOB_NAME} #${env.BUILD_NUMBER} thất bại!\\n" +
-    //                         "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
-    //                         "Branch: ${env.GIT_BRANCH}\\n" +
-    //                         "Xem log tại: ${env.BUILD_URL}console"
-    //             )
-    //         }
-    //     }
-    // }
+    post {
+        success {
+            script {
+                slackSend(
+                    channel: env.SLACK_CHANNEL,
+                    color: 'good',
+                    message: "✅ hoangpv deploy job successful!\\n" +
+                            "Commit: ${env.GIT_COMMIT_SHORT}\\n" +
+                            "Branch: ${env.GIT_BRANCH}\\n" +
+                            "Local: http://${env.LOCAL_HOST}/jenkins/hoangpv2/deploy/current/\\n" +
+                            "Remote: http://${env.REMOTE_HOST}/jenkins/hoangpv2/deploy/current/\\n" +
+                            "Firebase: https://${env.FIREBASE_PROJECT}.web.app"
+                )
+            }
+        }
+        failure {
+            script {
+                slackSend(
+                    channel: env.SLACK_CHANNEL,
+                    color: 'danger',
+                    message: "❌ hoangpv deploy job failed!\\n" +
+                )
+            }
+        }
+    }
 }
