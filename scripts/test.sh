@@ -7,7 +7,7 @@ echo "Running tests..."
 echo $PWD
 npm run test:ci
 
-Check if installation was successful
+# Check if installation was successful
 if [ $? -eq 0 ]; then
     echo "✅ Tests passed successfully"
 else
